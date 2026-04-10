@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GeoPingApp.Views.UserLogin"
+             Title="UserLogin">
+    <Grid Padding="20" RowDefinitions="Auto, Auto, Auto, Auto, Auto, *">
+        <Label
+            Grid.Row="0"
+            Text="GeoPing"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"  
+            FontSize="32"
+            Margin="60"/>
+
+        <HorizontalStackLayout Grid.Row="1" HorizontalOptions="Center" Spacing="6" Margin="0,0,0,4">
+            <Button
+            Text="Registrar"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Padding="12, 0"
+            Clicked="Button_Clicked_Registrar"/>
+
+            <Button
+            Text="Logar"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            BackgroundColor="red"
+            Padding="12, 0"/>
+        </HorizontalStackLayout>
+
+        <Grid Grid.Row="2" RowDefinitions="Auto, Auto, Auto, Auto">
+            <Label Grid.Row="0" Text="E-mail"/>
+            <Entry Grid.Row="1" x:Name="user_email" Placeholder="vinicius@email.com"/>
+
+            <Label Grid.Row="2" Text="Senha"/>
+            <Entry Grid.Row="3" IsPassword="True" x:Name="user_password" Placeholder="******"/>
+        </Grid>
+
+
+        <Label 
+           Grid.Row="3"
+           Text="Esqueci minha senha"
+           FontAttributes="Bold"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           Margin="0, 8, 0, 0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_EsqueciSenha" />
+            </Label.GestureRecognizers>
+        </Label>        
+        
+        <Button
+            Grid.Row="4"
+            Text="Acessar conta"
+            Margin="0, 24"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Clicked="Button_Clicked_AcessarConta"/>
+
+        <Label 
+            Grid.Row="5"
+            Text="Develop by Vinicius Cassemira"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            Margin="10"/>
+    </Grid>
+</ContentPage>
