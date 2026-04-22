@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GeoPingApp.Views.SeeAllUser"
+             Title="SeeAllUser">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Voltar" Clicked="ToolbarItem_Clicked_Voltar"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <VerticalStackLayout>
+            <SearchBar x:Name="txt_search_user" Margin="20" Placeholder="Pesquisar por usuário" TextChanged="txt_search_user_TextChanged" />
+
+            <ListView x:Name="list_user" ItemSelected="list_user_ItemSelected" Margin="20" BackgroundColor="DarkGray">
+                <ListView.Header >
+                    <Grid ColumnDefinitions="*, *, *" BackgroundColor="DarkSlateGray">
+                        <Label Grid.Column="0" Text="Id:"/>
+                        <Label Grid.Column="1" Text="Nome:" />
+                        <Label Grid.Column="2" Text="Email:" />
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*, *, *">
+                                <Label Grid.Column="0" Text="{Binding Id}" />
+                                <Label Grid.Column="1" Text="{Binding Name}" />
+                                <Label Grid.Column="2" Text="{Binding Email}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
