@@ -3,7 +3,7 @@ namespace GeoPingApp.Views;
 public partial class HomePage : ContentPage
 {
 	public HomePage()
-	{
+	{ 
 		InitializeComponent();
 	}
 
@@ -28,5 +28,10 @@ public partial class HomePage : ContentPage
 
             await Navigation.PushAsync(new Views.UserLogin());
         }
+    }
+
+    async private void Button_Clicked_VerUsuarios(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Views.SeeAllUser());
     }
 }

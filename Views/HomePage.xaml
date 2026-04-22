@@ -3,16 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GeoPingApp.Views.HomePage"
              Title="HomePage">
-    <VerticalStackLayout>
+    <Grid Padding="20" RowDefinitions="Auto, Auto, auto, *">
         <Label 
+            Grid.Row="0"
             Text="Bem vindo a tela inicial do GeoPing!"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"  
+            FontSize="32"
+            Margin="60"/>
 
         <Button 
-            Text="Encerrar sessão"
+            Grid.Row="1"
+            Text="Ver usuários" 
+            Clicked="Button_Clicked_VerUsuarios"
             VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="0"/>
+
+        <Button 
+            Grid.Row="2"
+            Text="Encerrar sessão"
+            VerticalOptions="End" 
             HorizontalOptions="Center" 
-            Clicked="Button_Clicked_EncerrarSessao"/>
-    </VerticalStackLayout>
+            Clicked="Button_Clicked_EncerrarSessao"
+            Margin="0,20,0,0"/>
+
+        <Label
+            Grid.Row="3"
+            Text="Develop by Vinicius Cassemira"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            Margin="10"/>
+    </Grid>
 </ContentPage>
