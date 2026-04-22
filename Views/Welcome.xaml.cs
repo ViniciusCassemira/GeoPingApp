@@ -10,13 +10,10 @@ public partial class Welcome : ContentPage
     async private void Button_Clicked_Comecar(object sender, EventArgs e)
     {
         string? is_user_logged = await SecureStorage.Default.GetAsync("user_name");
+
         if (is_user_logged != null)
-        {
-            await Navigation.PushAsync(new Views.HomePage());
-        }
+            Application.Current!.MainPage = new NavigationPage(new Views.HomePage());
         else
-        {
-            await Navigation.PushAsync(new Views.UserRegister());
-        }
+            Application.Current!.MainPage = new NavigationPage(new Views.UserRegister());
     }
 }
