@@ -32,5 +32,10 @@ namespace GeoPingApp.Helpers
         {
             return conexao.Table<User>().Where(u => u.Email == p.Email).FirstOrDefaultAsync();
         }
+
+        public Task<List<User>> SearchUserByName(string name)
+        {
+            return conexao.Table<User>().Where(u => u.Name.Contains(name)).ToListAsync();
+        }
     }
 }
