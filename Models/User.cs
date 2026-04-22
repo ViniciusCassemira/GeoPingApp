@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SQLite;
 
 namespace GeoPingApp.Models
 {
     public class User
     {
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         string _name { get; set; }
         string _email { get; set; }
