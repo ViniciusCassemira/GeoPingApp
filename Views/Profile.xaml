@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GeoPingApp.Views.Profile"
+             Title="Profile">
+    <VerticalStackLayout>
+        <Label 
+            Text="Perfil"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button Text="WebHook - em breve" Clicked="Button_Clicked_WebHook" HorizontalOptions="Center"/>
+
+        <Button
+            Text="Encerrar sessão"
+            VerticalOptions="End" 
+            HorizontalOptions="Center" 
+            Clicked="Button_Clicked_EncerrarSessao"
+            Margin="0,20,0,0"/>
+    </VerticalStackLayout>
+</ContentPage>

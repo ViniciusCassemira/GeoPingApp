@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GeoPingApp.Views.HomePage"
              Title="HomePage">
-    <Grid Padding="20" RowDefinitions="Auto, Auto, auto, *">
+    <Grid Padding="20" RowDefinitions="Auto, auto, *">
         <Label 
             Grid.Row="0"
             Text="Bem vindo a tela inicial do GeoPing!"
@@ -20,16 +20,8 @@
             HorizontalOptions="Center"
             Margin="0"/>
 
-        <Button 
-            Grid.Row="2"
-            Text="Encerrar sessão"
-            VerticalOptions="End" 
-            HorizontalOptions="Center" 
-            Clicked="Button_Clicked_EncerrarSessao"
-            Margin="0,20,0,0"/>
-
         <Label
-            Grid.Row="3"
+            Grid.Row="2"
             Text="Develop by Vinicius Cassemira"
             HorizontalOptions="Center"
             VerticalOptions="End"

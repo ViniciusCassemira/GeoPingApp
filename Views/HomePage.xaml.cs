@@ -18,18 +18,6 @@ public partial class HomePage : ContentPage
         }
     }
 
-    async private void Button_Clicked_EncerrarSessao(object sender, EventArgs e)
-    {
-        bool logout_confirmation = await DisplayAlertAsync("Tem certeza?", "Encerrar sessão", "Ok", "Cancelar");
-
-        if (logout_confirmation)
-        {
-            SecureStorage.Default.Remove("user_email");
-
-            await Navigation.PushAsync(new Views.UserLogin());
-        }
-    }
-
     async private void Button_Clicked_VerUsuarios(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Views.SeeAllUser());
