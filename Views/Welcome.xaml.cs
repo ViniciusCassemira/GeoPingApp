@@ -2,18 +2,18 @@ namespace GeoPingApp.Views;
 
 public partial class Welcome : ContentPage
 {
-	public Welcome()
-	{
-        InitializeComponent();
-	}
-
-    async private void Button_Clicked_Comecar(object sender, EventArgs e)
+    public Welcome()
     {
-        string? is_user_logged = await SecureStorage.Default.GetAsync("user_name");
+        InitializeComponent();
+    }
+
+    private async void Button_Clicked_Comecar(object sender, EventArgs e)
+    {
+        string? is_user_logged = await SecureStorage.Default.GetAsync("user_email");
 
         if (is_user_logged != null)
-            Application.Current!.MainPage = new NavigationPage(new Views.HomePage());
+            await Shell.Current.GoToAsync("//main/homePage");
         else
-            Application.Current!.MainPage = new NavigationPage(new Views.UserRegister());
+            await Shell.Current.GoToAsync("userLogin"); // sem // pois é rota avulsa
     }
 }

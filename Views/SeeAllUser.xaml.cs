@@ -46,7 +46,7 @@ public partial class SeeAllUser : ContentPage
         {
             User? user = e.SelectedItem as User;
 
-            await DisplayAlertAsync("Usuário selecionado:",$"{user?.Name} - {user?.Email}", "Fechar");
+            await DisplayAlertAsync("Usuário selecionado:",$"{user?.Name} - {user?.CreatedAt}", "Fechar");
 
         }
         catch (Exception ex)

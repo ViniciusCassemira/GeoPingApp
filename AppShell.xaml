@@ -9,8 +9,24 @@
     Title="GeoPingApp">
 
     <ShellContent
-        Title="Home"
+        Title="Welcome"
         ContentTemplate="{DataTemplate Views:Welcome}"
-        Route="MainPage" />
+        Route="welcome" />
 
+    <TabBar Route="main">
+        <ShellContent
+            Title="Inicio"
+            ContentTemplate="{DataTemplate Views:HomePage}"
+            Route="homePage" />
+
+        <ShellContent
+            Title="Localização"
+            ContentTemplate="{DataTemplate Views:LocationPage}"
+            Route="locationPage" />
+
+        <ShellContent
+            Title="Perfil"
+            ContentTemplate="{DataTemplate Views:Profile}"
+            Route="profile" />        
+    </TabBar>
 </Shell>

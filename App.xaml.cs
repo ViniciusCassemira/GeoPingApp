@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Globalization;
 using GeoPingApp.Helpers;
 
 namespace GeoPingApp
@@ -28,6 +28,7 @@ namespace GeoPingApp
         public App()
         {
             InitializeComponent();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

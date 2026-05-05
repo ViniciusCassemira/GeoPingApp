@@ -10,6 +10,8 @@ namespace GeoPingApp.Models
         string _email { get; set; }
         string _password { get; set; }
 
+        public DateTime CreatedAt { get; private set; } = DateTime.Now;
+
         public string Name
         {
             get => _name;
@@ -42,6 +44,5 @@ namespace GeoPingApp.Models
                 _password = value;
             }
         }
-
     }
 }
