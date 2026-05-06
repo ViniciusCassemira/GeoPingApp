@@ -33,9 +33,14 @@ namespace GeoPingApp.Helpers
             return conexao.Table<User>().Where(u => u.Email == p.Email && u.Password == p.Password).FirstOrDefaultAsync();
         }
 
-        public Task<User> GetUserByEmail(User p)
+        public Task<User> GetUserByEmail(string email)
         {
-            return conexao.Table<User>().Where(u => u.Email == p.Email).FirstOrDefaultAsync();
+            return conexao.Table<User>().Where(u => u.Email == email).FirstOrDefaultAsync();
+        }
+
+        public Task<int> UpdateUser(User u)
+        {
+            return conexao.UpdateAsync(u);
         }
 
         public Task<List<User>> SearchUserByName(string name)

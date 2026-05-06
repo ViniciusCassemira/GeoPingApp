@@ -24,14 +24,7 @@ public partial class UserRecoverPassword : ContentPage
             if (string.IsNullOrWhiteSpace(user_email.Text))
                 throw new Exception("Informe o email cadastrado");
 
-            User user = new()
-            {
-                Name = "",
-                Email = user_email.Text.Trim(),
-                Password = ""
-            };
-
-            User existing_user = await App.Db.GetUserByEmail(user);
+            User existing_user = await App.Db.GetUserByEmail(user_email.Text);
 
             if (existing_user == null)
                 throw new Exception("Email não encontrado");

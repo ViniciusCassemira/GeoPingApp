@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GeoPingApp.Views.EditProfile"
+             Title="EditProfile">
+    <VerticalStackLayout>
+        <Label 
+            Text="Edição de usuário"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label Text="Nome"/>
+        <Entry x:Name="txt_user_name" Text="{Binding Name}"/>
+
+        <Label Text="Email"/>
+        <Entry x:Name="txt_user_email" Text="{Binding Email}"/>
+
+        <Label Text="Senha"/>
+        <Entry x:Name="txt_user_password" Text="{Binding Password}"/>
+
+        <!--
+        <Label Text="Senha atual"/>
+        <Entry x:Name="txt_user_current_password" Text="" Placeholder="6543221" IsPassword="True"/>
+
+        <Label Text="Nova senha"/>
+        <Entry x:Name="txt_user_new_password" Text="" Placeholder="123456" IsPassword="True"/>
+
+        <Label Text="Repetir senha"/>
+        <Entry x:Name="txt_user_repeat_password" Text="" Placeholder="123456" IsPassword="True"/>
+        -->
+        <Button Text="Salvar alterações" Clicked="Button_Clicked_SaveProfile"/>
+    </VerticalStackLayout>
+</ContentPage>

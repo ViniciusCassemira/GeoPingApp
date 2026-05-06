@@ -9,6 +9,8 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
+        <Button Text="Editar perfil" Clicked="Button_Clicked_EditarPerfil" HorizontalOptions="Center"/>        
+        
         <Button Text="WebHook - em breve" Clicked="Button_Clicked_WebHook" HorizontalOptions="Center"/>
 
         <Button

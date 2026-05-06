@@ -1,5 +1,7 @@
 namespace GeoPingApp.Views;
 
+using GeoPingApp.Models;
+
 public partial class Profile : ContentPage
 {
 	public Profile()
@@ -22,5 +24,18 @@ public partial class Profile : ContentPage
     async private void Button_Clicked_WebHook(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Views.WebHookDashboard());
+    }
+
+    async private void Button_Clicked_EditarPerfil(object sender, EventArgs e)
+    {
+        // Pegando email da sesão atual
+        string? email_usuario = await SecureStorage.Default.GetAsync("user_email");
+
+        User informacao_usuario = await App.Db.GetUserByEmail(email_usuario);
+
+        await Navigation.PushAsync(new Views.EditProfile
+        {
+            BindingContext = informacao_usuario
+        });
     }
 }
