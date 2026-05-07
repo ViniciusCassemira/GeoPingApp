@@ -1,13 +1,45 @@
+using System.Collections.ObjectModel;
+using GeoPingApp.Models;
+
 namespace GeoPingApp.Views;
 
 public partial class LocationPage : ContentPage
 {
-	public LocationPage()
-	{
-		InitializeComponent();
-	}
+    ObservableCollection<UserLocation> lista_localizacao = new();
 
-    private void list_UserLocation_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    protected async override void OnAppearing()
+    {
+        string? userId = await SecureStorage.Default.GetAsync("user_id");
+
+        try
+        {
+            lista_localizacao.Clear();
+            List<UserLocation> tmp = await App.Db.GetUserLocationByUserId(int.Parse(userId!));
+
+            if (tmp == null)
+            {
+                await DisplayAlertAsync("Aviso", "Nenhuma localização encontrada", "OK");
+            }
+            else
+            {
+                await DisplayAlertAsync("Sucesso", $"Localizações carregadas: {tmp.Count}", "OK");
+            }
+
+            tmp.ForEach(i => lista_localizacao.Add(i));
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlertAsync("Ops", ex.Message, "OK");
+        }
+    }
+
+    public LocationPage()
+    {
+        InitializeComponent();
+        collection_user_location.ItemsSource = lista_localizacao;
+    }
+
+    private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
 
     }

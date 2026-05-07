@@ -16,6 +16,7 @@ public partial class Profile : ContentPage
         if (logout_confirmation)
         {
             SecureStorage.Default.Remove("user_email");
+            SecureStorage.Default.Remove("user_id");
 
             await Navigation.PushAsync(new Views.UserLogin());
         }

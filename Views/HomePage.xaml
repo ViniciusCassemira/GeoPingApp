@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GeoPingApp.Views.HomePage"
              Title="HomePage">
-    <Grid Padding="20" RowDefinitions="Auto, auto, *">
+    <Grid Padding="20" RowDefinitions="Auto, auto, auto, *" RowSpacing="10">
         <Label 
             Grid.Row="0"
             Text="Bem vindo a tela inicial do GeoPing!"
@@ -12,16 +12,31 @@
             FontSize="32"
             Margin="60"/>
 
-        <Button 
+        <!--<Button 
             Grid.Row="1"
             Text="Ver usuários" 
             Clicked="Button_Clicked_VerUsuarios"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             Margin="0"/>
+        -->
+
+        <Entry
+            Grid.Row="1"
+            x:Name="entry_note"
+            Placeholder="Digite uma nota para a localização (opcional)"
+            VerticalOptions="Center" HorizontalTextAlignment="Center" Margin="10,0" BackgroundColor="Gray" TextColor="White" PlaceholderColor="White"/>
+
+        <Button 
+            Grid.Row="2"
+            Text="Enviar localização" 
+            Clicked="Button_Clicked_EnviarLocalizacao"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="0"/>
 
         <Label
-            Grid.Row="2"
+            Grid.Row="3"
             Text="Develop by Vinicius Cassemira"
             HorizontalOptions="Center"
             VerticalOptions="End"

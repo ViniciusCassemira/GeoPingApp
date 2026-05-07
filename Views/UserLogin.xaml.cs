@@ -35,6 +35,7 @@ public partial class UserLogin : ContentPage
             //Exibe msg caso o usuário exista
             await DisplayAlertAsync("Bem vindo!", existing_user.Name, "Ok");
             await SecureStorage.Default.SetAsync("user_email", existing_user.Email);
+            await SecureStorage.Default.SetAsync("user_id", existing_user.Id.ToString());
             await Shell.Current.GoToAsync("//main/homePage");
         }
         catch(Exception ex)

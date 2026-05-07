@@ -57,9 +57,9 @@ namespace GeoPingApp.Helpers
             return conexao.InsertAsync(ul);
         }
 
-        public Task<List<UserLocation>> GetUserLocationByUserId(User user)
+        public Task<List<UserLocation>> GetUserLocationByUserId(int user_id)
         {
-            return conexao.Table<UserLocation>().Where(u => u.UserId == user.Id).ToListAsync();
+            return conexao.Table<UserLocation>().Where(u => u.UserId == user_id).ToListAsync();
         }
 
         public Task<UserLocation> GetUserLocation(int id)
