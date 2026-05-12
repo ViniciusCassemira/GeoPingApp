@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GeoPingApp.Views.LocationDetail"
+             Title="LocationDetail">
+
+    <VerticalStackLayout Padding="30" Spacing="10">
+        <Label 
+            Text="Detalhes da localização"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="20" 
+            TextColor="white" />
+
+        <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto, Auto, Auto" RowSpacing="10">
+            <Label Text="Nota:" FontSize="16" TextColor="white" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" />
+            <Label Text="{Binding Note}" FontSize="16" TextColor="white" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End" />
+
+            <Label Text="Criado em:" FontSize="16" TextColor="white" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Start" />
+            <Label Text="{Binding CreatedAt}" FontSize="16" TextColor="white" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End" />
+
+            <Label Text="Latitude:" FontSize="16" TextColor="white" Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Start" />
+            <Label Text="{Binding Latitude}" FontSize="16" TextColor="white" Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="End" />
+
+            <Label Text="Longitude:" FontSize="16" TextColor="white" Grid.Row="3" Grid.Column="0" HorizontalTextAlignment="Start" />
+            <Label Text="{Binding Longitude}" FontSize="16" TextColor="white" Grid.Row="3" Grid.Column="1" HorizontalTextAlignment="End" />
+        </Grid>
+
+        <WebView x:Name="mapWebView" HeightRequest="250" Source="https://google.com" />
+
+        <Button Text="Editar localização" Clicked="Button_Clicked_EditLocation" Margin="0,10,0,0"/>
+        <Button Text="Excluir localização" Clicked="Button_Clicked_DeleteLocation" BackgroundColor="Red" />
+    </VerticalStackLayout>
+</ContentPage>

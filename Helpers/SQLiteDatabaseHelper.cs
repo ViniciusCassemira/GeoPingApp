@@ -66,5 +66,15 @@ namespace GeoPingApp.Helpers
         {
             return conexao.Table<UserLocation>().Where(u => u.UserId == id).FirstOrDefaultAsync();
         }
+
+        public Task<int> UpdateUserLocation(UserLocation u)
+        {
+            return conexao.UpdateAsync(u);
+        }
+
+        public Task<int> DeleteUserLocation(UserLocation ul)
+        {
+            return conexao.DeleteAsync(ul);
+        }
     }
 }

@@ -21,7 +21,7 @@
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="10" />
                             </Border.StrokeShape>
-                            <Grid ColumnDefinitions="*, *, *">
+                            <Grid ColumnDefinitions="*, *">
                                 <Label
                                     Grid.Column="0"
                                     Text="{Binding Note}"
@@ -29,14 +29,8 @@
                                     FontSize="12" 
                                     TextColor="#2B3440" />
 
-                                <Label Text="{Binding Latitude}"
-                                       Grid.Column="1"
-                                       VerticalOptions="Center" 
-                                       FontSize="12" 
-                                       TextColor="#2B3440" />
-
                                 <Label Text="{Binding CreatedAt}" 
-                                       Grid.Column="2"
+                                       Grid.Column="1"
                                        VerticalOptions="Center" 
                                        FontSize="12" 
                                        TextColor="#2B3440" />

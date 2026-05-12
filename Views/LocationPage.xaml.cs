@@ -16,15 +16,6 @@ public partial class LocationPage : ContentPage
             lista_localizacao.Clear();
             List<UserLocation> tmp = await App.Db.GetUserLocationByUserId(int.Parse(userId!));
 
-            if (tmp == null)
-            {
-                await DisplayAlertAsync("Aviso", "Nenhuma localização encontrada", "OK");
-            }
-            else
-            {
-                await DisplayAlertAsync("Sucesso", $"Localizações carregadas: {tmp.Count}", "OK");
-            }
-
             tmp.ForEach(i => lista_localizacao.Add(i));
         }
         catch (Exception ex)
@@ -39,8 +30,13 @@ public partial class LocationPage : ContentPage
         collection_user_location.ItemsSource = lista_localizacao;
     }
 
-    private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
+        UserLocation selected_location = e.CurrentSelection.FirstOrDefault() as UserLocation;
 
+        await Navigation.PushAsync(new Views.LocationDetail
+        {
+            BindingContext = selected_location
+        });
     }
 }

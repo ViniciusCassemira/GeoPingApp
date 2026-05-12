@@ -29,6 +29,22 @@ public partial class HomePage : ContentPage
     {
         try
         {
+            GeolocationRequest request = new GeolocationRequest(
+                GeolocationAccuracy.Medium,
+                TimeSpan.FromSeconds(10));
+
+            Location? local = await Geolocation.Default.GetLocationAsync(request);
+
+            if (local != null)
+            {
+                await DisplayAlertAsync("Localização atual", $"Latitude: {local.Latitude}, Longitude: {local.Longitude}", "Ok");
+            }
+            else
+            {
+                throw new Exception("Não foi possível obter a localização atual");
+            }
+
+            // Já existia
             int user_id = int.Parse((await SecureStorage.Default.GetAsync("user_id"))!);
 
             string note = string.IsNullOrWhiteSpace(entry_note.Text) ? "(Sem nota)" : entry_note.Text;
@@ -37,8 +53,8 @@ public partial class HomePage : ContentPage
             UserLocation localizacao_atual = new()
             {
                 UserId = user_id,
-                Latitude = "-22.3154",
-                Longitude = "-49.0615",
+                Latitude = local.Latitude.ToString(),
+                Longitude = local.Longitude.ToString(),
                 Note = note
             };
 
