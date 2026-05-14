@@ -29,6 +29,6 @@
         <WebView x:Name="mapWebView" HeightRequest="250" Source="https://google.com" />
 
         <Button Text="Editar localização" Clicked="Button_Clicked_EditLocation" Margin="0,10,0,0"/>
-        <Button Text="Excluir localização" Clicked="Button_Clicked_DeleteLocation" BackgroundColor="Red" />
+        <Button Text="Excluir localização" Clicked="Button_Clicked_DeleteLocation" BackgroundColor="Red" TextColor="white"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GeoPingApp.Views.EditLocation"
              Title="EditLocation">
-    <VerticalStackLayout Padding="30">
-        <Label Text="Location Note"/>
-        <Entry x:Name="txt_location_note" Text="{Binding Note}"/>
+    <VerticalStackLayout Padding="30" Spacing="10">
+        <Label Text="Editar Localização"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" 
+               FontSize="20"/>
+        <Entry x:Name="txt_location_note" Text="{Binding Note}" Placeholder="Digite uma nota para a localização"/>
 
-        <Button Text="Save Location" Clicked="Button_Clicked_Save"/>
+        <Button Text="Salvar localização" Clicked="Button_Clicked_Save" Margin="0,0,0,10"/>
     </VerticalStackLayout>
 </ContentPage>

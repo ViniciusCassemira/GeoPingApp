@@ -24,7 +24,7 @@
             Text="Logar"
             HorizontalOptions="Center"
             VerticalOptions="Center"
-            BackgroundColor="red"
+            BackgroundColor="{StaticResource SecondaryDarkText}"
             Padding="12, 0"/>
         </HorizontalStackLayout>
 

@@ -17,7 +17,7 @@ public partial class EditLocation : ContentPage
 
 			await App.Db.UpdateUserLocation(location);
 
-			await DisplayAlertAsync("Success", "Localização atualizada com sucesso!", "OK");
+			await DisplayAlertAsync("Successo!", "Localização atualizada com sucesso!", "OK");
 			await Navigation.PopAsync();
 		}
 		catch(Exception ex)

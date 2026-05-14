@@ -3,31 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GeoPingApp.Views.EditProfile"
              Title="EditProfile">
-    <VerticalStackLayout>
+    <Grid Padding="20" RowDefinitions="Auto, *" RowSpacing="20">
         <Label 
+            Grid.Row="0"
             Text="Edição de usuário"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" 
+            FontSize="20" />
 
-        <Label Text="Nome"/>
-        <Entry x:Name="txt_user_name" Text="{Binding Name}"/>
+        <Grid Grid.Row="1" RowSpacing="10" RowDefinitions="Auto, Auto, Auto, Auto">
+            <VerticalStackLayout Grid.Row="0">
+                <Label Text="Nome"/>
+                <Entry x:Name="txt_user_name" Text="{Binding Name}"/>
+            </VerticalStackLayout>
 
-        <Label Text="Email"/>
-        <Entry x:Name="txt_user_email" Text="{Binding Email}"/>
+            <VerticalStackLayout Grid.Row="1">
+                <Label Text="Email"/>
+                <Entry x:Name="txt_user_email" Text="{Binding Email}"/>
+            </VerticalStackLayout>
 
-        <Label Text="Senha"/>
-        <Entry x:Name="txt_user_password" Text="{Binding Password}"/>
+            <VerticalStackLayout Grid.Row="2">
+                <Label Text="Senha"/>
+                <Entry x:Name="txt_user_password" Text="{Binding Password}"/>
+            </VerticalStackLayout>
 
-        <!--
-        <Label Text="Senha atual"/>
-        <Entry x:Name="txt_user_current_password" Text="" Placeholder="6543221" IsPassword="True"/>
+            <!--
+            <Label Text="Senha atual"/>
+            <Entry x:Name="txt_user_current_password" Text="" Placeholder="6543221" IsPassword="True"/>
 
-        <Label Text="Nova senha"/>
-        <Entry x:Name="txt_user_new_password" Text="" Placeholder="123456" IsPassword="True"/>
+            <Label Text="Nova senha"/>
+            <Entry x:Name="txt_user_new_password" Text="" Placeholder="123456" IsPassword="True"/>
 
-        <Label Text="Repetir senha"/>
-        <Entry x:Name="txt_user_repeat_password" Text="" Placeholder="123456" IsPassword="True"/>
-        -->
-        <Button Text="Salvar alterações" Clicked="Button_Clicked_SaveProfile"/>
-    </VerticalStackLayout>
+            <Label Text="Repetir senha"/>
+            <Entry x:Name="txt_user_repeat_password" Text="" Placeholder="123456" IsPassword="True"/>
+            -->
+            <Button Grid.Row="3" Text="Salvar alterações" Clicked="Button_Clicked_SaveProfile"/>
+        </Grid>
+    </Grid>
 </ContentPage>

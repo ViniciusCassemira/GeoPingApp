@@ -4,13 +4,15 @@
              x:Class="GeoPingApp.Views.LocationPage"
              Title="LocationPage">
     <ScrollView>
-        <VerticalStackLayout Padding="20">
-            <Label 
+        <Grid Padding="20" RowDefinitions="Auto, *" RowSpacing="20">
+            <Label
+                Grid.Row="0"
                 Text="Última localização"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
 
-            <CollectionView x:Name="collection_user_location"
+            <CollectionView Grid.Row="1"    
+                            x:Name="collection_user_location"
                             SelectionMode="Single"
                             SelectionChanged="CollectionView_SelectionChanged">
 
@@ -39,6 +41,6 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </VerticalStackLayout>
+        </Grid>
     </ScrollView>
 </ContentPage>

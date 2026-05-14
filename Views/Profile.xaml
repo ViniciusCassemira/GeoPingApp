@@ -3,21 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GeoPingApp.Views.Profile"
              Title="Profile">
-    <VerticalStackLayout>
+    <Grid Padding="20" RowDefinitions="Auto, *" RowSpacing="20">
         <Label 
+            Grid.Row="0"
             Text="Perfil"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            FontSize="20" />
 
-        <Button Text="Editar perfil" Clicked="Button_Clicked_EditarPerfil" HorizontalOptions="Center"/>        
-        
-        <Button Text="WebHook - em breve" Clicked="Button_Clicked_WebHook" HorizontalOptions="Center"/>
+        <Grid Grid.Row="1" RowSpacing="10" RowDefinitions="Auto, Auto, Auto">
+                
+            <Button Grid.Row="0" Text="Editar perfil" Clicked="Button_Clicked_EditarPerfil" HorizontalOptions="Center"/>        
+            
+            <Button Grid.Row="1" Text="WebHook (em breve)" Clicked="Button_Clicked_WebHook" HorizontalOptions="Center"/>
 
-        <Button
-            Text="Encerrar sessão"
-            VerticalOptions="End" 
-            HorizontalOptions="Center" 
-            Clicked="Button_Clicked_EncerrarSessao"
-            Margin="0,20,0,0"/>
-    </VerticalStackLayout>
+            <Button
+                Grid.Row="2"
+                Text="Encerrar sessão"
+                VerticalOptions="End" 
+                HorizontalOptions="Center" 
+                Clicked="Button_Clicked_EncerrarSessao"/>
+        </Grid>
+    </Grid>
 </ContentPage>
