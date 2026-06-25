@@ -49,4 +49,9 @@ public partial class LocationDetail : ContentPage
 			}
 		}
 	}
+
+    private void TapGestureRecognizer_Tapped_ReturnPage(object sender, TappedEventArgs e)
+    {
+		Navigation.PopAsync();
+    }
 }

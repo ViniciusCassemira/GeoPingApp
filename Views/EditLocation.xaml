@@ -4,10 +4,26 @@
              x:Class="GeoPingApp.Views.EditLocation"
              Title="EditLocation">
     <VerticalStackLayout Padding="30" Spacing="10">
-        <Label Text="Editar Localização"
-               VerticalOptions="Center" 
-               HorizontalOptions="Center" 
-               FontSize="20"/>
+        <Grid ColumnDefinitions="Auto, *">
+
+            <Label 
+                 Text="&lt;"
+                 FontSize="20" 
+                 TextColor="white"
+                 FontAttributes="Bold"
+                 Grid.Column="0">
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_ReturnPage" />
+                </Label.GestureRecognizers>
+
+            </Label>
+
+            <Label Text="Editar Localização"
+                   HorizontalOptions="Center" 
+                   FontSize="20"
+                   Grid.Column="1"/>
+        </Grid>
         <Entry x:Name="txt_location_note" Text="{Binding Note}" Placeholder="Digite uma nota para a localização"/>
 
         <Button Text="Salvar localização" Clicked="Button_Clicked_Save" Margin="0,0,0,10"/>

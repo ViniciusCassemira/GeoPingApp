@@ -5,11 +5,12 @@
              Title="LocationPage">
     <ScrollView>
         <Grid Padding="20" RowDefinitions="Auto, *" RowSpacing="20">
-            <Label
-                Grid.Row="0"
-                Text="Última localização"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
+            <Label 
+            Grid.Row="0"
+            Text="Localizações salvas"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="20" />
 
             <CollectionView Grid.Row="1"    
                             x:Name="collection_user_location"

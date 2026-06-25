@@ -5,12 +5,31 @@
              Title="LocationDetail">
 
     <VerticalStackLayout Padding="30" Spacing="10">
-        <Label 
-            Text="Detalhes da localização"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" 
-            FontSize="20" 
-            TextColor="white" />
+
+        <Grid ColumnDefinitions="Auto, *" Margin="0,0,0,20">
+
+            <Label 
+                 Text="&lt;"
+                 FontSize="20" 
+                 TextColor="white"
+                 FontAttributes="Bold"
+                 Grid.Column="0">
+                
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_ReturnPage" />
+                </Label.GestureRecognizers>
+                
+            </Label>
+
+            <Label 
+                Text="Detalhes da localização"
+                FontSize="20" 
+                TextColor="white"
+                Grid.Column="1"
+                HorizontalOptions="Center"/>
+            
+        </Grid>
+
 
         <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto, Auto, Auto" RowSpacing="10">
             <Label Text="Nota:" FontSize="16" TextColor="white" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" />

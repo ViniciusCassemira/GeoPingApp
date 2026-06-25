@@ -4,12 +4,28 @@
              x:Class="GeoPingApp.Views.EditProfile"
              Title="EditProfile">
     <Grid Padding="20" RowDefinitions="Auto, *" RowSpacing="20">
-        <Label 
-            Grid.Row="0"
-            Text="Edição de usuário"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" 
-            FontSize="20" />
+
+        <Grid Grid.Row="0" ColumnDefinitions="Auto, *">
+
+            <Label 
+                 Text="&lt;"
+                 FontSize="20" 
+                 TextColor="white"
+                 FontAttributes="Bold"
+                 Grid.Column="0">
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_ReturnPage" />
+                </Label.GestureRecognizers>
+
+            </Label>
+
+            <Label
+                Grid.Column="1"
+                Text="Edição de usuário"
+                HorizontalOptions="Center" 
+                FontSize="20" />
+        </Grid>
 
         <Grid Grid.Row="1" RowSpacing="10" RowDefinitions="Auto, Auto, Auto, Auto">
             <VerticalStackLayout Grid.Row="0">

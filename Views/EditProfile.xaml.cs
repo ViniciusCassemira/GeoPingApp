@@ -61,4 +61,9 @@ public partial class EditProfile : ContentPage
 			await DisplayAlertAsync("Ops", ex.Message, "Ok");
 		}
 	}
+
+    private void TapGestureRecognizer_Tapped_ReturnPage(object sender, TappedEventArgs e)
+    {
+		Navigation.PopAsync();
+    }
 }

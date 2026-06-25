@@ -26,4 +26,9 @@ public partial class EditLocation : ContentPage
 			await Navigation.PopAsync();
 		}
 	}
+
+    private void TapGestureRecognizer_Tapped_ReturnPage(object sender, TappedEventArgs e)
+    {
+        Navigation.PopAsync();
+    }
 }
